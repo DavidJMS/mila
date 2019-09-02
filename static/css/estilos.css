@@ -1,5 +1,266 @@
+:root{
+	--font-size: 18px;
+	--z-index-menu:100;
+	--z-index-modal:1000;
+
+	--color-primary:rgba(0,0,0,.8);
+	/* --color-primary:#000;
+	--color-primary:#000;
+	--color-primary:#000; */
+	--color-dark:#282D31;
+	--color-darkAlt:#141618;
+	--color-text:#53575A;
+	--color-borde:#DFE0E0;
+	--color-bodyBG:#FAFDFF;
+}
+
 *, *::before, *::after{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+body{
+	/* padding-top: 58px; */
+	font-size: var(--font-size);
+	background-color: var(--color-bodyBG);
+}
+/* NAV */
+.navbar{
+	padding: 0 10%;
+	background-color: var(--color-primary) !important;
+	width: 100%;
+	height: 58px;
+	position: fixed;
+	top: 0;
+	z-index: var(--z-index-menu);
+}
+.navbar .navbar-collapse.collapse.show{
+	width: 100%;
+	background: var(--color-primary);
+	height: 8em;
+	box-shadow: 100px 0px var(--color-primary),
+				-100px 0 var(--color-primary);
+}
+.navbar .navbar-toggler{
+	outline: 0;
+}
+.navbar .navbar-brand{
+	height: 58px;
+	width: 58px;
+	padding: 0;
+}
+.navbar .brand{
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	vertical-align: top;
+}
+/* .navbar .brand img{
+	background-size: cover;
+} */
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255,255,255,1);
+	font-size: 1em;
+}
+/* .navbar form button:focus,
+.navbar form input:focus{
+	box-shadow: none;
+}
+.navbar form button{
+	background: rgba(255,255,255,.1);
+	border-color: white;
+	color: white;
+}
+.navbar form button:hover{
+	background: transparent;
+	border-color: white;
+	color: white;
+} */
+/* SLIDER */
+header .slider{
+	width: 100%;
+	height: 30em;
+	position: relative;
+	margin-bottom: 2em;
+}
+header .slider .img{
+	width: 100%;
+	height: 30em;
+	/* background-size: unset; */
+	border-bottom: 2px solid black;
+}
+header .slider .btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5em;
+	width: 4em;
+	height: 100%;
+	background-color: rgba(0,0,0,.05);
+	text-align: center;
+	font-weight: bold;
+	position: absolute;
+	top: 0;
+	color: black;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+header .slider .btn:hover{
+	cursor: pointer;
+	background-color: rgba(0,0,0,.2);
+}
+header .slider .btn-previous{
+	left: 0;
+}
+header .slider .btn-next{
+	right: 0;
+}
+/* ------------------------------ */
+
+.contenedor{
+    width: 95%;
+    max-width: 95%;
+	margin: auto;
+}
+
+.barra form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.barra .barra-busqueda{
+	width: 70%;
+	max-width: 500px;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+	font-size: 16px;
+	border: 2px solid var(--color-borde);
+	outline: 0;
+}
+.barra .categorias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+ .barra .categorias a{
+     color: #9b9b9b;
+     margin: 10px 20px;
+     font-size: 18px;
+     font-weight: 700;
+ }
+ .barra .categorias a:hover{
+	text-decoration: none;
+	color: #5a5959;
+ }
+.barra .categorias a.activo{ /*los enlaces que tengan la clase activo se pondran en negritas*/
+    color: var(--color-darkAlt);
+}
+/* GRID */
+.grid{
+	position: relative;
+	width: 100%;
+	opacity: 0;
+	transition: opacity .5s linear 1s;
+}
+.grid.imagenes-cargadas{
+	opacity: 1;
+}
+.grid .item{
+	position: absolute;
+	display: block;
+	margin: 10px;
+	padding: 0;
+    width: calc(33.3333% - 20px);
+
+}
+.grid .item .item-content{
+	position: relative;
+}
+.grid .item img{
+	width: 100%;
+	vertical-align: top; 
+	cursor: pointer;
+    border-radius: 5px;
+}
+
+/* OVERLAY */
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.9);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;
+	z-index: var(--z-index-modal);
+}
+.overlay.activo{
+    display: flex;
+}
+.overlay img{
+    max-width: 50vh;
+}
+.overlay .descripcion{
+    display: block;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+	margin-top: 5px;
+	margin-bottom: 0;
+    border-radius: 10px;
+    max-width: 50%;
+}
+.contenedor-img{
+    position: relative;
+}
+.overlay #btn-cerrar-popud{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-size: 20px;
+    border: none;
+}
+/* COSAS FEAS DE MOMENTO */
+footer .info{
+	width: 100%;
+	height: 100px;
+	padding: 1em 10%;
+	background: #ccc;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1em;
+}
+footer .info .title{
+	font-size: 1em;
+	/* font-weight: normal; */
+}
+footer .info .redes ul{
+	list-style: none;
+}
+footer .copy{
+	width: 100%;
+	padding: .5em;
+	background: rgba(0,0,0,.8);
+	text-align: center;
+	color: white;
+}
+footer .copy p{
+	margin: 0;
+	font-weight: bold;
 }
