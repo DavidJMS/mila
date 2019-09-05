@@ -29,10 +29,14 @@
 					<a class="nav-link" href="#">Link</a>
 				</li>
 			</ul>
-			<!-- <form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Buscar">
-				<button class="btn my-2 my-sm-0" type="submit">Buscar</button>
-			</form> -->
+			<ul class="navbar-nav redes ml-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://www.instagram.com/soymilaortiz/"><i class="fab fa-instagram"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://twitter.com/SoyMilaOrtiz"><i class="fab fa-twitter"></i></a>
+				</li>
+			</ul>
 		</div>
 	</nav>
 
@@ -58,6 +62,7 @@
 			<a href="#">Ciudades</a>
 			<a href="#">Personas</a>
 			<a href="#">Animales</a>
+			<a href="#">Gifts</a>
 		</div>
 </section>
 	<section id="grid" class="grid">
@@ -78,7 +83,23 @@
                 <div class="item-contenido">
                     <img src="../static/img/ilus/2.jpg" alt="">
                 </div>
-            </div>
+			</div>
+			<div class="item"
+            data-categoria="gifts" 
+            data-etiquetas="animales leon"
+            data-descripcion="2 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/gifts/Isak animation.gif" alt="">
+                </div>
+			</div>
+			<div class="item"
+            data-categoria="gifts" 
+            data-etiquetas="animales leon"
+            data-descripcion="2 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/gifts/Mech Samurai Animation P2.gif" alt="">
+                </div>
+			</div>
 
             <div class="item"
 				 data-categoria="naturaleza"
@@ -247,25 +268,24 @@
                 <button id="btn-cerrar-popud"><i class="fas fa-times"></i></button>
                 <img src="" alt="">
             </div>
-            <p class="descripcion"></p>
+			<p class="descripcion"></p>
             
         </section>
 	
 
 	<footer>
 		<div class="info">
-			<div class="redes">
-				<h2 class="title">Sígueme</h2>
-				<ul>
-					<li><a href="#"></a></li>
-				</ul>
+			<div class="union">
+				<h2 class="title">Sitio web creado por:</h2>
+				<img class="logo" src="../static/img/unionDigital_logo.png" alt="">
+				<a href="https://uniondigital.pythonanywhere.com/">Unión Digital</a>
 			</div>
 			<div class="contacto">
 				<h2 class="title">Contacto</h2>
 			</div>
 		</div>
 		<div class="copy">
-			<p>2019 SoyMilagrosOrtiz .Todos los Derechos Reservados</p>
+			<p><span><i class="far fa-copyright"></i></span> 2019 SoyMilagrosOrtiz .Todos los Derechos Reservados</p>
 		</div>
 	</footer>
 	<script src="../static/js/popper.min.js"></script>
