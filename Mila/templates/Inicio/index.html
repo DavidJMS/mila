@@ -1,0 +1,303 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Milagros</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/estilos.css"%}">
+	<script src="https://kit.fontawesome.com/6ace824e82.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">
+			<img class="brand" src="../static/img/logo.png" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+				  
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#barra">Bienvenidos Terricolas &#x1F47D</a>
+				</li>
+				<!-- Esto es otro comentario 
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				-->
+			</ul>
+			<ul class="navbar-nav redes ml-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://www.instagram.com/soymilaortiz/"><i class="fab fa-instagram"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://twitter.com/SoyMilaOrtiz"><i class="fab fa-twitter"></i></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<header>
+		<div id="slider" class="slider">
+			<div class="btn btn-previous">
+				<i class="fas fa-angle-left"></i>
+			</div>
+			<div class="btn btn-next">
+				<i class="fas fa-angle-right"></i>
+			</div>
+			<img class="img" src="../static/img/ilus/24.jpg" alt="">
+		</div>
+	</header>
+<div class="contenedor">
+<section class="barra" id="barra">
+	<form action="">
+			<input type="text" name="search" id="barra-busqueda" class="barra-busqueda" placeholder="Buscar">
+		</form>
+		<div class="categorias" id="categorias">
+			<a href="#" class="activo">Todos</a>
+			<a href="#">Naturaleza</a>
+			<a href="#">Ciudades</a>
+			<a href="#">Personas</a>
+			<a href="#">Animales</a>
+			<a href="#">Gifts</a>
+		</div>
+</section>
+	<section id="grid" class="grid">
+			
+			<div class="item" 
+            data-categoria="ciudades" 
+            data-etiquetas="ciudades calles carros autos"
+            data-descripcion="1 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/1.jpg" alt="">
+                </div>
+            </div>
+            
+            <div class="item"
+            data-categoria="animales" 
+            data-etiquetas="animales leon"
+            data-descripcion="2 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/2.jpg" alt="">
+                </div>
+			</div>
+			<div class="item"
+            data-categoria="gifts" 
+            data-etiquetas="animales leon"
+            data-descripcion="2 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/gifts/Isak animation.gif" alt="">
+                </div>
+			</div>
+			<div class="item"
+            data-categoria="gifts" 
+            data-etiquetas="animales leon"
+            data-descripcion="2 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/gifts/Mech Samurai Animation P2.gif" alt="">
+                </div>
+			</div>
+
+            <div class="item"
+				 data-categoria="naturaleza"
+				 data-etiquetas="paisajes montañas mar playas"
+				 data-descripcion="3.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/3.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="personas"
+				 data-etiquetas="personas mujeres"
+				 data-descripcion="4.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/4.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="animales"
+				 data-etiquetas="animales pandas"
+				 data-descripcion="5.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/5.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="personas"
+				 data-etiquetas="personas mujeres"
+				 data-descripcion="6.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/6.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="naturaleza"
+				 data-etiquetas="paisajes montañas niebla"
+				 data-descripcion="7.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/7.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item" 
+				 data-categoria="ciudades"
+				 data-etiquetas="ciudades paisajes carreteras"
+				 data-descripcion="8.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/8.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="naturaleza"
+				 data-etiquetas="naturaleza hojas plantas"
+				 data-descripcion="9.- Lorem ipsum dolor sit amet consectetur.
+				 	"
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/9.jpg" alt="">
+				</div>
+            </div>
+            <div class="item" 
+            data-categoria="ciudades" 
+            data-etiquetas="ciudades calles carros autos"
+            data-descripcion="1 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/10.jpg" alt="">
+                </div>
+            </div>
+            
+            <div class="item"
+            data-categoria="animales" 
+            data-etiquetas="animales leon"
+            data-descripcion="2 Lorem ipsum dolor sit, amet consectetur adipisicing.">
+                <div class="item-contenido">
+                    <img src="../static/img/ilus/11.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="item"
+				 data-categoria="naturaleza"
+				 data-etiquetas="paisajes montañas mar playas"
+				 data-descripcion="3.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/12.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="personas"
+				 data-etiquetas="personas mujeres"
+				 data-descripcion="4.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/13.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="animales"
+				 data-etiquetas="animales pandas"
+				 data-descripcion="5.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/14.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="personas"
+				 data-etiquetas="personas mujeres"
+				 data-descripcion="6.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/15.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="naturaleza"
+				 data-etiquetas="paisajes montañas niebla"
+				 data-descripcion="7.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/15.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item" 
+				 data-categoria="ciudades"
+				 data-etiquetas="ciudades paisajes carreteras"
+				 data-descripcion="8.- Lorem ipsum dolor sit amet consectetur."
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/16.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="item"
+				 data-categoria="naturaleza"
+				 data-etiquetas="naturaleza hojas plantas"
+				 data-descripcion="9.- Lorem ipsum dolor sit amet consectetur.
+				 	"
+			>
+				<div class="item-contenido">
+					<img src="../static/img/ilus/17.jpg" alt="">
+				</div>
+			</div>
+	</section>
+</div>
+
+	<!-- OVERLAY -->
+        <section class="overlay" id="overlay">
+            <div class="contenedor-img">
+                <button id="btn-cerrar-popud"><i class="fas fa-times"></i></button>
+                <img src="" alt="">
+            </div>
+			<p class="descripcion"></p>
+            
+        </section>
+	
+
+	<footer>
+		<div class="info">
+			<div class="union">
+				<h2 class="title">Sitio web creado por:</h2>
+				<img class="logo" src="../static/img/unionDigital_logo.png" alt="">
+				<a href="https://uniondigital.pythonanywhere.com/">Unión Digital</a>
+			</div>
+			<div class="contacto">
+				<h2 class="title">Contacto</h2>
+			</div>
+		</div>
+		<div class="copy">
+			<p><span><i class="far fa-copyright"></i></span> 2019 SoyMilagrosOrtiz .Todos los Derechos Reservados</p>
+		</div>
+	</footer>
+	<script src="{% static "js/popper.min.js"%}"></script>
+	<script src="{% static "js/jquery-3.4.1.min.js"%}"></script>
+	<script src="{% static "js/bootstrap.min.js"%}"></script>
+	<script src="{% static "js/slider.js"%}"></script>
+
+	<script  src ="{% static "js/web-animations.min.js"%}"></script>
+	<script  src ="{% static "js/muuri.min.js"%}"></script>
+	<script src="{% static "js/gallery.js"%}"></script>
+</body>
+</html>
