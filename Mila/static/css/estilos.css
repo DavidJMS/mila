@@ -74,7 +74,8 @@ body::-webkit-scrollbar-thumb {
 }
 /* SLIDER */
 header .slider{
-	width: 100%;
+	width: 80%;
+	margin:0px auto;
 	height: 30em;
 	position: relative;
 	margin-bottom: 2em;
@@ -180,7 +181,7 @@ header .slider .btn-next{
 }
 .grid .item img{
 	width: 100%;
-	vertical-align: top; 
+	vertical-align: top;
 	cursor: pointer;
     border-radius: 5px;
 }
@@ -287,7 +288,7 @@ footer .copy p{
 	margin: 0 5%;
 	justify-self: center;
 	text-align: center;
-	width: 90%; 
+	width: 90%;
 	height: auto;
 	max-height: 85vh;
 }
