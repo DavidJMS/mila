@@ -1,7 +1,8 @@
 (function(){
-    var imagenes = ['../static/img/ilus/1.jpg',
-    '../static/img/ilus/14.jpg',
-    '../static/img/ilus/3.jpg']
+    var imagenes = ['../static/img/ilus light/slider/Lovers.jpg',
+    '../static/img/ilus light/slider/Mamaquilla vs Cthulhu.jpg',
+    '../static/img/ilus light/slider/Self love.jpg',
+    '../static/img/ilus light/slider/El constructor.jpg']
     var cont= 0;
 
     function slider(contenedor){
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             img.src=imagenes[0];
             cont= 0;
         }
-    }, 4000);
+    }, 8000);
     slider(contenedor);
 })
 }());

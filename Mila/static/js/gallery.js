@@ -4,6 +4,7 @@ const grid = new Muuri('.grid',{
       }
     });
 
+
 window.addEventListener('load', ()=>{
     grid.refreshItems().layout();
     document.getElementById('grid').classList.add('imagenes-cargadas');
@@ -21,11 +22,29 @@ window.addEventListener('load', ()=>{
     });
 
     //BARRA DE BUSQUEDA
-    document.querySelector('#barra-busqueda').addEventListener('input', (e)=>{
-        const busqueda = e.target.value;
+    var barra=document.querySelector('#barra-busqueda');
+    barra.addEventListener('input', (e)=>{
+        const busqueda = (e.target.value).toLowerCase();
+        //const busqueda2= busqueda.toLowerCase();
         grid.filter((item)=> item.getElement().dataset.etiquetas.includes(busqueda));
-    });
 
+    });
+    barra.addEventListener('focus', ()=>{
+        if(grid._layout.items.length != 0){
+         barra.style.border="2px solid blue";
+        }
+    });
+    barra.addEventListener('keyup',function(event){
+        barra.style.border="2px solid blue";
+        if(grid._layout.items.length == 0){
+            barra.style.border="2px solid red";
+        }
+    });
+    barra.addEventListener('blur', ()=>{
+        if(grid._layout.items.length != 0){
+         barra.style.border="2px solid #DFE0E0";
+        }
+    });
     //LISTENER EN IMAGENES
     const overlay = document.getElementById('overlay');
     document.querySelectorAll('.grid .item img').forEach((elemento)=>{
@@ -35,7 +54,7 @@ window.addEventListener('load', ()=>{
             overlay.classList.add('activo');
             document.querySelector('#overlay img').src = ruta;
             document.querySelector('#overlay p').innerHTML = descripcion;
-            
+
         });
     });
 

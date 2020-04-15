@@ -25,7 +25,7 @@ SECRET_KEY = 'w+_+#uh(5!y)&l=5+a-z^$@_$r@2m+6fy7@hxjx&g(+-^ka69s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['milagros.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.soymilaortiz.com']
 
 
 # Application definition
