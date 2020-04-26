@@ -41,6 +41,7 @@ window.addEventListener('load',()=>{
 		var messageValue   = message.value;
 		var emailRegularExpresion = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 		let count = 0;
+		check = false;
 
 		if (nameValue.trim()==null || nameValue.trim().length==0 ){
 			name.classList.add('is-invalid');
@@ -89,37 +90,54 @@ window.addEventListener('load',()=>{
 
 		console.log('entro');
 		if (check == true){
+
+			// vars and const to fetch
+
 			var url = 'http://127.0.0.1:8000/message/';
 			var data = { email: emailValue, subject: subjectValue, name: nameValue, message: messageValue };
-			console.log(JSON.stringify(data));
 			const csrftoken = getCookie('csrftoken');
-			fetch(url, {
-				method: "POST",
-				headers:{
-					"X-Requested-With": "XMLHttpRequest",
-					"X-CSRFToken": csrftoken,
-					"Content-Type": "application/json; charset=utf-8",
-					"Accept": "application/json"
-					},
-				body: JSON.stringify(data)
-			}).then(res => res.json())
-			  .catch(error => console.error('error',error),
-			  	Swal.fire({
-				  title: 'Oops...',
-				  text: 'Mensaje no enviado, intente de nuevo',
-				  type: "error",
-				}))
-			  .then(response => console.log('success', response),
-			  	Swal.fire({
-				  title: 'Listo!',
-				  text: 'Su mensaje fue envido exitoxamente',
-				  type: "success",
-				}),
-				document.querySelector('.form').reset(),
-				inputs.forEach((input,indice)=>{
-					input.classList.remove('is-valid');
-					input.style.borderBottom="initial";
-				}));
+
+			sendMessage(url,data,csrftoken);
+			           
+			async function sendMessage(url,data,csrftoken){
+				
+				var response = await fetch(url, {
+					method: "POST",
+					headers:{
+						"X-Requested-With": "XMLHttpRequest",
+						"X-CSRFToken": csrftoken,
+						"Content-Type": "application/json; charset=utf-8",
+						"Accept": "application/json"
+						},
+					body: JSON.stringify(data)
+				}).then( async (res) => {return await res.json()});
+
+				if (response.detail == 'Mensaje Enviado Correctamente'){
+
+					Swal.fire({
+					  title: 'Listo!',
+					  text: 'Su mensaje fue envido exitoxamente',
+					  type: "success",
+					});
+					document.querySelector('.form').reset();
+					inputs.forEach((input,indice)=>{
+						input.classList.remove('is-valid');
+						input.style.borderBottom="initial";
+					});
+					
+				}
+
+				else{
+
+					Swal.fire({
+					  title: 'Upss',
+					  text: 'Mensaje no enviado!',
+					  type: "error",
+					});
+
+				}
+				
+			}
 		}
 	});
 	function getCookie(name) {
@@ -146,16 +164,16 @@ window.addEventListener('load',()=>{
 		});*/
 
 	function inicio(e){
-		console.log(e);
+		//console.log(e);
 	    var pX = e.pageX;
 	    var pY = e.pageY;
 
 	    var btnX = btnMessage.offsetLeft;
 	    var btnY = btnMessage.offsetTop;
-	    console.log('posicion del boton en y',btnY,'posicion del boton en x',btnX);
+	    //console.log('posicion del boton en y',btnY,'posicion del boton en x',btnX);
 	    difX=pX-btnX;
 	    difY=pY-btnY;
-	    console.log('Esta es la diferencia en Y: ',difY,'Esta es la diferencia en X: ',difX);
+	    //console.log('Esta es la diferencia en Y: ',difY,'Esta es la diferencia en X: ',difX);
 	    //Detectamos cuando el mouse se mueva y suelte
 	    document.addEventListener('mousemove',mover,false);
 		document.addEventListener('mouseup',soltar,false);

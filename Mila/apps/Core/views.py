@@ -18,7 +18,6 @@ def about(request):
 @api_view(['POST'])
 def message(request): 
 	try:
-		print(request.data)
 		if len(request.data.get('email')) == 0 or len(request.data.get('message')) == 0:
 			return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 		subject, from_email, recipient_list = request.data.get('subject'), settings.EMAIL_HOST_USER, ['soymilaortiz@gmail.com']
@@ -37,4 +36,4 @@ def message(request):
 		return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 	except Exception as e:
 		return Response({"detail": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-	return Response({"detail": str('Mensaje Enviado Correctamente')}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+	return Response({"detail": str('Mensaje Enviado Correctamente')}, status=status.HTTP_200_OK)
