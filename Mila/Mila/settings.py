@@ -25,7 +25,7 @@ SECRET_KEY = 'w+_+#uh(5!y)&l=5+a-z^$@_$r@2m+6fy7@hxjx&g(+-^ka69s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.soymilaortiz.com']
+ALLOWED_HOSTS = ['www.soymilaortiz.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.Galeria',
+    'apps.Core',
+    'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Mila.urls'
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 TEMPLATES = [
     {
@@ -100,11 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -120,3 +125,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# Files Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Emails settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'soymilaortiz.page@gmail.com'
+EMAIL_HOST_PASSWORD = 'soymilaortiz2019'

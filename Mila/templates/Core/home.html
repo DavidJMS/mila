@@ -1,0 +1,15 @@
+{% extends 'Core/base.html' %}
+{% block title%}Home{% endblock %}
+{% block style %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/home.css"%}">
+{% endblock %}
+{% block content %}
+<div class="content-block"> 
+	<div class="hero-image img-fluid" style="background-image: url('{% load staticfiles %}{% static 'img/heroart.jpg' %}');">
+		<header class="text-center">
+			<h1 class="line-1 anim-typewriter" >Milagros Ortiz</h1>
+		</header>
+	</div>
+</div>
+{% endblock %}

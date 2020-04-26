@@ -1,6 +1,6 @@
 from django.urls import path
-from apps.Galeria.views import Inicio
+from apps.Galeria.views import *
 
 urlpatterns = [
-    path('', Inicio, name='Inicio'),
+    path('', galery, name='galery'),
 ]

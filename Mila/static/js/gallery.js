@@ -15,9 +15,9 @@ window.addEventListener('load', ()=>{
             e.preventDefault();
             enlaces.forEach((enlace)=> enlace.classList.remove('activo'));
             e.target.classList.add('activo');
-
-            const categoria = e.target.innerHTML.toLowerCase();
-            categoria ==='todos' ? grid.filter('[data-categoria]') : grid.filter(`[data-categoria="${categoria}"]`);
+        
+            const categoria = e.target.innerHTML;
+            categoria ==='Todos' ? grid.filter('[data-categoria]') : grid.filter(`[data-categoria="${categoria}"]`);
         });
     });
 

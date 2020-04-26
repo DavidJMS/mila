@@ -1,0 +1,51 @@
+
+footer .info{
+	width: 100%;
+	/* height: 100px; */
+	padding: 1em 10%;
+	background: var(--color-darkAlt);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1em;
+	color: white;
+}
+footer .info .title{
+	font-size: 1em;
+	margin-bottom: .2em;
+	/* font-weight: normal; */
+}
+footer .info .union{
+	border-right: solid 3px var(--color-borde);
+}
+footer .info .union .logo{
+	height: 3em;
+	display: inline-block;
+}
+footer .info .union a{
+	color: inherit;
+}
+footer .copy{
+	width: 100%;
+	padding: .5em;
+	background: rgb(0, 0, 0);
+	text-align: center;
+	color: var(--color-bodyBG);
+}
+footer .copy p{
+	margin: 0;
+	font-weight: normal;
+}
+/* MEDIAS */
+@media (max-width:360px){
+	footer .info{
+		width: 100%;
+		padding: 1em 10%;
+		background: var(--color-darkAlt);
+		color: white;
+	}
+	footer .info .union {
+	    border-bottom: solid 3px var(--color-borde);
+	    margin-bottom: 1em;
+	    padding-bottom: 1em;
+	}
+}

@@ -1,8 +1,8 @@
 (function(){
-    var imagenes = ['../static/img/ilus light/slider/Lovers.jpg',
-    '../static/img/ilus light/slider/Mamaquilla vs Cthulhu.jpg',
-    '../static/img/ilus light/slider/Self love.jpg',
-    '../static/img/ilus light/slider/El constructor.jpg']
+    var imagenes = ['../static/img/slider/Lovers.png',
+    '../static/img/slider/Mamaquilla vs Cthulhu.png',
+    '../static/img/slider/Self love.png',
+    '../static/img/slider/Elconstructor.png']
     var cont= 0;
 
     function slider(contenedor){

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>{% block title%}{% endblock %} | Soy Mila Ortiz</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "animate.css/animate.css"%}">
+	<link rel="icon" type="image/png" href="{% static "img/logonuevo.png"%}" />
+	<link rel="stylesheet" type="text/css" href="{% static "css/sweetalert2.min.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/navbar.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/contact.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/footer.css"%}">
+	{% block style %}{% endblock %}
+	<script src="https://kit.fontawesome.com/6ace824e82.js"></script>
+</head>
+<body>
+	<!-- Menú -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">
+			<img class="brand img-navbar" src="{% static "img/logonuevo.png"%}" alt="">
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#barra">Bienvenido Terricola &#x1F47D</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'home' %}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'galery' %}">Galeria</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav redes ml-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://www.instagram.com/soymilaortiz/"><i class="fab fa-instagram"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://twitter.com/SoyMilaOrtiz"><i class="fab fa-twitter"></i></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <!-- Contenido-->
+    {% block content %}{% endblock %}
+
+    <!--Boton Contactame-->
+    <div id="btn-message" class="btn-message animated bounceInUp">
+    	<a href="#" data-toggle="modal" class="modallink" data-target="#ModalContactForm">
+    		<i class="fas fa-comment-dots"></i>
+    	</a>
+    </div>
+    <!--Modal Formulario-->
+	<div class="modal fade" id="ModalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog cascading-modal" role="document">
+		    <div class="modal-content">
+		      	<div class="modal-header bg-dark text-white text-center">
+		        	<h5>
+		        		<i class="fa fa-pencil-alt"></i> 
+		        		Formulario De Contácto
+		        	</h5>
+		        	<button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+	          			<span aria-hidden="true">x</span>
+	        		</button>
+		      	</div>
+			    <div class="modal-body">
+			    	<form class="form" action="" method="POST" onsubmit="return false">
+			    		
+			    	<div class="md-form form-sm">
+			          <i class="fa fa-envelope prefix"></i>
+			          <input type="text" id="name" class="form-control form-control-sm form-contact" placeholder="Nombres">
+			        </div>
+			        <div class="md-form form-sm">
+			          <i class="fa fa-lock prefix"></i>
+			          <input type="text" id="email"class="form-control form-control-sm form-contact" placeholder="Email">
+			        </div>
+			        <div class="md-form form-sm">
+			          <i class="fa fa-tag prefix"></i>
+			          <input type="text" id="subject" class="form-control form-control-sm form-contact" placeholder="Asunto">
+			        </div>
+			        <div class="md-form form-sm">
+			          <i class="fa fa-pencil-alt prefix"></i>
+			          <textarea type="text" id="message" class="md-textarea form-control form-contact" placeholder="Mensaje"></textarea>
+			        </div>
+			        <div class="text-center mt-4 mb-2">
+			          <button class="btn btn-dark" id="button">
+			          	Enviar
+			          </button>
+			        </div>
+			    	</form>
+			    </div>
+		 	</div>
+	  	</div>
+	</div>
+    <!-- Footer-->
+	<footer>
+		<div class="info">
+			<div class="union">
+				<h2 class="title">Sitio web creado por:</h2>
+				<img class="logo" src="{% static "img/unionDigital_logo.png"%}" alt="Logo De Union Digital">
+				<a href="#">Unión Digital</a>
+			</div>
+			<div class="contacto">
+				<h2 class="title">Contacto</h2>
+				<p>soymilaortiz@gmail.com</p>
+			</div>
+		</div>
+		<div class="copy">
+			<p><span><i class="far fa-copyright"></i></span> 2019 SoyMilaOrtiz .Todos los Derechos Reservados</p>
+		</div>
+	</footer>
+	<script src="{% static "js/popper.min.js"%}"></script>
+	<script src="{% static "js/jquery-3.4.1.min.js"%}"></script>
+	<script src="{% static "js/bootstrap.min.js"%}"></script>
+	<script  src ="{% static "js/web-animations.min.js"%}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.25.0/dist/sweetalert2.all.min.js"></script>
+	<script  src ="{% static "js/message.js"%}"></script>
+	{% block scripts %}{% endblock %}
+</body>
+</html>
